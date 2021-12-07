@@ -12,6 +12,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { InputAdornment, Typography } from '@mui/material';
 import {makeStyles} from '@mui/styles';
+import {useHistory} from 'react-router'
 
 const theme = createTheme();
 
@@ -29,8 +30,15 @@ const useStyles = makeStyles({
   },
 });
 
+
 export default function SignIn() {
   const classes = useStyles();
+  const history = useHistory()
+
+  const handleSubmit = () =>{
+    history.push('/')
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -107,6 +115,7 @@ export default function SignIn() {
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
                     className = {classes.root}
+                    onClick = {() => handleSubmit()}
                 >
                     Sign In
                 </Button>

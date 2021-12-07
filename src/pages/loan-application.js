@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {makeStyles} from '@mui/styles'
 import SideDrawer from '../components/side-drawer'
 
@@ -17,13 +17,14 @@ const useStyles = makeStyles((theme) =>{
         }
 })
 
-function Individual() {
+function LoanApplication() {
     const classes = useStyles()
     return (
         <div className = {classes.root}>
             <SideDrawer/>
+            Loan application section
         </div>
-    )
+    );
 }
 
-export default Individual
+export default LoanApplication;

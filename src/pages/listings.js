@@ -1,28 +1,30 @@
-import React from 'react'
+import React from 'react';
 import {makeStyles} from '@mui/styles'
-import "../css/dashboard-main.css"
-import SideDrawer from '../components/side-drawer';
+import SideDrawer from '../components/side-drawer'
+
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) =>{
     return {
         root : {
             display : "flex",
-            backgroundColor : "#f5f5f0",
             height : "100vh"
             },
-    
+        appbar :{
+            width : `calc(100% - ${drawerWidth}px)`
+            },
+            // toolbar: theme.mixins.toolbar
         }
 })
 
-
-function MainPage() {
+function Listings() {
     const classes = useStyles()
-
     return (
         <div className = {classes.root}>
             <SideDrawer/>
+            listings
         </div>
-    )
+    );
 }
 
-export default MainPage
+export default Listings;

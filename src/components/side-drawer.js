@@ -20,7 +20,8 @@ const useStyles = makeStyles({
         width : drawerWidth
     },
     drawerPaper : {
-        width : drawerWidth
+        width : drawerWidth,
+        background : "#f5f5f0 !important"
     },
     active:{
         background : "#f4f4f4"
@@ -85,7 +86,7 @@ function SideDrawer() {
     const classes = useStyles()
     const history = useHistory()
     const location = useLocation()
-    console.log(location.pathname)
+
     return (
         <Drawer
         className = {classes.drawer}
@@ -101,13 +102,13 @@ function SideDrawer() {
             {/* List links */}
             <List>
                 {menuItems.map(item =>(
-                  <ListItem 
-                    key = {item.text} 
-                    button
-                    onClick = {() => history.push(item.path)}
-                    className = {location.pathname === item.path ? classes.active : null}
-                >
-                      <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItem 
+                        key = {item.text} 
+                        button
+                        onClick = {() => history.push(item.path)}
+                        className = {location.pathname === item.path ? "active": null}
+                    >
+                      <ListItemIcon className = {location.pathname === item.path ? "active-icon" : "item-icon"}>{item.icon}</ListItemIcon>
                       <ListItemText primary = {item.text} /> 
                   </ListItem>   
                 ))}
