@@ -13,6 +13,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { useHistory, useLocation } from 'react-router';
+// import { useState } from 'react';
 
 const drawerWidth = 300;
 const useStyles = makeStyles({
@@ -87,12 +88,16 @@ function SideDrawer() {
     const history = useHistory()
     const location = useLocation()
 
+    // const [open, setOpen] = useState(false)
+
     return (
         <Drawer
         className = {classes.drawer}
-        variant = "permanent"
         anchor = "left"
         classes = {{paper : classes.drawerPaper}}
+        variant = "permanent"
+  
+        sx = {{display : {sm : "none", md : "block"}}}
         >
             <div className = "dasboard-logo">
                 <Box>

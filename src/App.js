@@ -1,6 +1,6 @@
 import SignIn from './pages/sign-in-page';
 import SignUp from './pages/sign-up-page';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import MainPage from './pages/dashboard-main-page';
 import Individual from './pages/individual';
 import Listings from './pages/listings';
@@ -17,7 +17,10 @@ function App() {
     <Switch>
       <Route exact path = "/sign-up" component = {SignUp}/>
       <Route exact path = "/sign-in" component = {SignIn}/>
-      <Route exact path = "/" component = {MainPage}/>
+      <Route exact path = "/">
+        <Redirect to = "/dashboard"/>
+      </Route>
+      <Route exact path = "/dashboard" component = {MainPage}/>
       <Route exact path = "/individual" component = {Individual}/>
       <Route exact path = "/listings" component = {Listings}/>
       <Route exact path = "/tour-agents" component = {TourAgents}/>
