@@ -1,6 +1,9 @@
 import React from 'react';
 import {makeStyles} from '@mui/styles'
 import SideDrawer from '../components/side-drawer'
+import {Grid} from '@mui/material'
+import TopBar from '../components/top-navigation-bar';
+import { useLocation } from 'react-router';
 
 const drawerWidth = 300;
 
@@ -19,10 +22,15 @@ const useStyles = makeStyles((theme) =>{
 
 function Listings() {
     const classes = useStyles()
+    const location = useLocation()
     return (
         <div className = {classes.root}>
             <SideDrawer/>
-            listings
+            <Grid container>
+                <Grid item sm = {12}>
+                    <TopBar title = {location.pathname.replace('/', '').toUpperCase()}/>
+                </Grid>
+            </Grid>
         </div>
     );
 }

@@ -16,3 +16,15 @@
 .active-icon{
     color : white !important;
 }
+
+.navbar-main{
+    /* display: flex, */
+    width: 100%;
+}
+
+.main-page-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
