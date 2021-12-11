@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) =>{
     return {
         root : {
             display : "flex",
-            height : "100vh"
+            height : "100vh",
+            backgroundColor : "#f4f4f4"
             },
         appbar :{
             width : `calc(100% - ${drawerWidth}px)`

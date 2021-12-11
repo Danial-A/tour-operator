@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) =>{
     return {
         root : {
             display : "flex",
-            backgroundColor : "#f5f5f0",
-            // height : "100vh"
+            backgroundColor : "#f4f4f4",
+            height : "100vh"
             },
             iconSize : {
                 fontSize : 40
@@ -79,7 +79,7 @@ function MainPage() {
                     </Grid>
                     <Grid item sm = {12}>
                         <Grid container>
-                            <div className = "main-page-content" style = {{width : "100%", marginTop : "4.1vh"}} >
+                            <div className = "main-page-content" style = {{width : "100%"}} >
                                 <Grid item sm = {12} width = "100%">
                                     <div className = "card-wrapper">
                                         {

@@ -117,7 +117,7 @@ function TopBar({title}) {
           <IconButton>
             <Logout style = {{fill : "crimson"}}/>
           </IconButton>
-            <Typography pl = {1}>
+            <Typography pl = {1} onClick = {()=> window.alert("Logging out")}>
                 Logout
             </Typography>
         </MenuItem>
