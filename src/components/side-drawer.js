@@ -33,7 +33,7 @@ const menuItems = [
     {
         text : "Dashboard",
         icon : <SubjectOutlined/>,
-        path : "/"
+        path : "/dashboard"
     },
     {
         text : "Individual",
