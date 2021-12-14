@@ -32,8 +32,6 @@ function LoanApproval() {
                 <Grid item sm = {12}>
                     <TopBar title = {location.pathname.replace(/[^a-zA-Z ]/g, " ").toUpperCase()}/>
                 </Grid>
-
-
             </Grid>
         </div>
     );

@@ -2,15 +2,14 @@ import { Grid, Typography } from '@mui/material';
 import React from 'react';
 
 function AgentCard({agent}) {
-    console.log(agent)
     return (
-        <Grid container>
-            <Grid item md = {4}>
+        <Grid container columnSpacing = {4}>
+            <Grid item md = {4} >
                <div 
                style = {{
                    height : "100%", 
                    background : "url('beach.jpg') no-repeat",
-                   backgroundSize : "contain",
+                   backgroundSize : "cover",
                    borderRadius: "20px 0px  0px 20px"
             
             }}>
@@ -18,7 +17,9 @@ function AgentCard({agent}) {
                </div>
             </Grid>
 
-            <Grid item md = {7}>
+            <Grid item md = {7} sx = {{
+                padding : "10px 5px"
+            }}>
                 <div>
                     <Typography>{agent.name}</Typography>
                     <Typography>{agent.address}</Typography>
