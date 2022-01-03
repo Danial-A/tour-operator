@@ -61,6 +61,11 @@ const menuItems = [
         path : "/cancelled"
     },
     {
+        text : "Paid Listing",
+        icon : <CancelIcon/>,
+        path : "/paid-listing"
+    },
+    {
         text : "Loan Application",
         icon : <CreditScoreIcon/>,
         path : "/loan-application"

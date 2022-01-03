@@ -9,6 +9,10 @@ import StarIcon from '@mui/icons-material/Star';
 //css
 import '../css/card.css'
 
+const cardFill = {
+  fill : "crimson"
+}
+
 export default function ListingsCard({card}) {
     console.log(card)
   return (
@@ -20,11 +24,11 @@ export default function ListingsCard({card}) {
           image={card.image}
           alt="green iguana"
         />
-        <CardContent sx = {{textAlign : "center"}}>
-        <div className = "listing-btn-container">
-            <button className = "listing-card-button">{card.name}</button>
+        <CardContent sx = {{textAlign : "center", position :"relative"}}>
+        <div className = "listing-btn-container">         
+              <button className = "listing-card-button">{card.name}</button>
         </div>
-          <Typography fontWeight = "bold" variant="h5" component="div" >
+          <Typography fontWeight = "bold" variant="h5" component="div" marginTop = "0.7vh">
             INR {card.price}
           </Typography>
           <Typography gutterBottom variant="subtitle1" fontWeight = "bold" fontSize  = "13px" component="div">
@@ -35,11 +39,11 @@ export default function ListingsCard({card}) {
             BLUE STAR TOURS & TRAVELS
           </Typography>
           <div style = {{marginTop : "5px"}}>
-            <StarIcon sx = {{fill : "crimson"}}/>
-            <StarIcon sx = {{fill : "crimson"}}/>
-            <StarIcon sx = {{fill : "crimson"}}/>
-            <StarIcon sx = {{fill : "crimson"}}/>
-            <StarIcon sx = {{fill : "crimson"}}/>
+            <StarIcon sx = {cardFill}/>
+            <StarIcon sx = {cardFill}/>
+            <StarIcon sx = {cardFill}/>
+            <StarIcon sx = {cardFill}/>
+            <StarIcon sx = {cardFill}/>
           </div>
 
         </CardContent>

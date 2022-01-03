@@ -1,13 +1,13 @@
 import React from 'react';
 import {makeStyles} from '@mui/styles'
-import SideDrawer from '../components/side-drawer'  
+import SideDrawer from '../components/side-drawer'
+import { Button, Grid, Typography } from '@mui/material';
 import { useLocation } from 'react-router';
 import TopBar from '../components/top-navigation-bar';
 import ListingCardLeft from '../components/listingCardLeft';
 
 //css
 import '../css/tour.css'
-import { Button, Grid, Typography } from '@mui/material';
 
 const drawerWidth = 300;
 
@@ -49,7 +49,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : true,
         card : {
             name : "Dubai",
             price : "40000",
@@ -62,7 +61,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : false,
         card : {
             name : "London",
             price : "40000",
@@ -75,7 +73,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : true,
         card : {
             name : "Singapore",
             price : "40000",
@@ -88,7 +85,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : false,
         card : {
             name : "OOTY",
             price : "40000",
@@ -101,7 +97,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : true,
         card : {
             name : "Delhi",
             price : "40000",
@@ -114,7 +109,6 @@ const completedTours = [
         names : ["Abdul Aziz", "Fathima Abdul", "Rizwan", "Fidda"],
         date : "26 Aug 2022",
         price : "160000",
-        approved : true,
         card : {
             name : "Bangalore",
             price : "40000",
@@ -127,7 +121,7 @@ const completedTours = [
 ]
 
 
-function LoanApproval() {
+function PaidListing() {
     const classes = useStyles()
     const location = useLocation()
     return (
@@ -136,45 +130,33 @@ function LoanApproval() {
             <Grid container>
             <div>
             <TopBar title = {location.pathname.replace(/[^a-zA-Z ]/g, " ").toUpperCase()}/>
-                <Grid container rowGap = {5} width = "95%" ml = "4vw" mr = {4} mt = {4} columnGap={5} mb = {6} >
+                <Grid container rowGap = {5} width = "95%" ml = {4} mr = {4} mt = {4} columnGap={5} mb = {6} >
                     {
                         completedTours.map((card, index)=>(
                             <Grid md = {11} key = {index} className = "paid-listing">
                                 <Grid container bgcolor= "white">
-                                    <Grid item md = {5.5}>
+                                    <Grid item md = {6}>
                                         <ListingCardLeft card = {card}/>
                                     </Grid>
-                                    <Grid item md = {2}>
-                                    <div style = {{height : "100%", display : "grid"}}>
-                                            <div style = {{margin : "auto", paddingLeft : "50px"}}>
-                                                {card.approved ? <Button variant = "contained" className= {classes.paidstyles} sx ={{ mt: 3, mb: 2 }}>
-                                                    Approved
-                                                </Button> : <Button variant = "contained" className= {classes.cancelledstyles} sx ={{ mt: 3, mb: 2 }}>
-                                                    Cancelled
-                                                </Button>}
-                                            </div>
+                                    <Grid item md = {3}>
+                                        <div style={{display : "flex", flexDirection : "column", justifyContent : "space-between", height : "100%", margin : "0 0 0 2vw"}}>
+                                            <Typography variant = "h6" mt = {3}>Payment</Typography>
+                                            <Typography variant = "h6">Transfer Number</Typography>
+                                            <Typography variant = "h6">Bank Name</Typography>
+                                            <Typography variant = "h6" mb = {3}>Date & Time</Typography>
                                         </div>
                                     </Grid>
-                                    <Grid item md = {2}>
-                                    <div style = {{height : "100%", display : "grid"}}>
-                                            <div style = {{margin : "auto", paddingLeft : "50px"}}>
+                                    <Grid item md = {3}>
+                                        <div style = {{height : "100%", display : "grid"}}>
+                                            <div style = {{margin : "auto"}}>
                                                 <Button variant = "contained" className= {classes.paidstyles} sx ={{ mt: 3, mb: 2 }}>
-                                                    Approve
+                                                    Paid
                                                 </Button>
                                             </div>
-                                            <div style = {{margin : "auto", paddingLeft : "50px"}}>
+                                            <div style = {{margin : "auto"}}>
                                                 <Button variant = "contained" className= {classes.cancelledstyles} sx ={{ mt: 3, mb: 2 }}>
-                                                    Cancel
+                                                    Cancelled
                                                 </Button>
-                                            </div>
-                                        </div>
-                                    </Grid>
-                                    <Grid item md = {2}>
-                                    <div style = {{height : "100%", display : "grid"}}>
-                                            <div style = {{margin : "auto", paddingLeft : "50px"}}>
-                                               <Typography color= "red" variant = "h6">
-                                                   Transaction Number
-                                               </Typography>
                                             </div>
                                         </div>
                                     </Grid>
@@ -190,4 +172,4 @@ function LoanApproval() {
     );
 }
 
-export default LoanApproval;
+export default PaidListing;

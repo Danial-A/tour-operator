@@ -11,6 +11,7 @@ import Cancelled from './pages/cancelled';
 import LoanApplication from './pages/loan-application';
 import LoanApproval from './pages/loan-approval';
 import PushNotifications from './pages/push-notifications';
+import PaidListing from './pages/paid-listing';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route exact path = "/loan-application" component = {LoanApplication}/>
       <Route exact path = "/loan-approval" component = {LoanApproval}/>
       <Route exact path = "/push-notifications" component = {PushNotifications}/>
+      <Route exact path = "/paid-listing" component = {PaidListing}/>
     </Switch>
   );
 }
