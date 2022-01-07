@@ -5,6 +5,7 @@ import { Logout, MessageRounded } from '@mui/icons-material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import {makeStyles} from '@mui/styles';
 
@@ -31,7 +32,7 @@ function TopBar({title}) {
     const handleClose = () => {
       setAnchorEl(null);
     };
-
+    const history = useHistory()
     const classes = useStyles()
     return (
         <div className = "navbar-main">
@@ -117,7 +118,7 @@ function TopBar({title}) {
           <IconButton>
             <Logout style = {{fill : "crimson"}}/>
           </IconButton>
-            <Typography pl = {1} onClick = {()=> window.alert("Logging out")}>
+            <Typography pl = {1} onClick = {()=> history.push("/sign-in")}>
                 Logout
             </Typography>
         </MenuItem>

@@ -137,6 +137,30 @@ function LoanApproval() {
             <div>
             <TopBar title = {location.pathname.replace(/[^a-zA-Z ]/g, " ").toUpperCase()}/>
                 <Grid container rowGap = {5} width = "95%" ml = "4vw" mr = {4} mt = {4} columnGap={5} mb = {6} >
+                    <Grid item md = {11} >
+                        <Grid container sx = {{bgcolor : "white", borderRadius : "10px",boxShadow : "5px 2px 10px grey"}} padding={2}>
+                            <Grid item md = {5.8} textAlign= "center">
+                                <Typography variant = "h5" color = "crimson" gutterBottom = {false} fontWeight="500">
+                                    Trip Details
+                                </Typography>
+                            </Grid>
+                            <Grid item md = {2} textAlign= "center">
+                                <Typography variant = "h5" color = "crimson" gutterBottom = {false} fontWeight="500">
+                                    Status
+                                </Typography>
+                            </Grid>
+                            <Grid item md = {2} textAlign= "center">
+                                <Typography variant = "h5" color = "crimson" gutterBottom = {false} fontWeight="500">
+                                    Change Status
+                                </Typography>
+                            </Grid>
+                            <Grid item md = {2} textAlign= "center">
+                                <Typography variant = "h5" color = "crimson" gutterBottom = {false} fontWeight="500">
+                                    Transaction Number
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                     {
                         completedTours.map((card, index)=>(
                             <Grid md = {11} key = {index} className = "paid-listing">
@@ -146,7 +170,9 @@ function LoanApproval() {
                                     </Grid>
                                     <Grid item md = {2}>
                                     <div style = {{height : "100%", display : "grid"}}>
+                                            
                                             <div style = {{margin : "auto", paddingLeft : "50px"}}>
+                                            
                                                 {card.approved ? <Button variant = "contained" className= {classes.paidstyles} sx ={{ mt: 3, mb: 2 }}>
                                                     Approved
                                                 </Button> : <Button variant = "contained" className= {classes.cancelledstyles} sx ={{ mt: 3, mb: 2 }}>
