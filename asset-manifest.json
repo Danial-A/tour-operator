@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tour-operator/static/css/main.3706c504.chunk.css",
+    "main.js": "/tour-operator/static/js/main.b30c9f6c.chunk.js",
+    "main.js.map": "/tour-operator/static/js/main.b30c9f6c.chunk.js.map",
+    "runtime-main.js": "/tour-operator/static/js/runtime-main.fa211e35.js",
+    "runtime-main.js.map": "/tour-operator/static/js/runtime-main.fa211e35.js.map",
+    "static/js/2.8f6c29f1.chunk.js": "/tour-operator/static/js/2.8f6c29f1.chunk.js",
+    "static/js/2.8f6c29f1.chunk.js.map": "/tour-operator/static/js/2.8f6c29f1.chunk.js.map",
+    "index.html": "/tour-operator/index.html",
+    "static/css/main.3706c504.chunk.css.map": "/tour-operator/static/css/main.3706c504.chunk.css.map",
+    "static/js/2.8f6c29f1.chunk.js.LICENSE.txt": "/tour-operator/static/js/2.8f6c29f1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa211e35.js",
+    "static/js/2.8f6c29f1.chunk.js",
+    "static/css/main.3706c504.chunk.css",
+    "static/js/main.b30c9f6c.chunk.js"
+  ]
+}
