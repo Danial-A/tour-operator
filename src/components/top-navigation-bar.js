@@ -34,6 +34,12 @@ function TopBar({title}) {
     };
     const history = useHistory()
     const classes = useStyles()
+
+    const handleLogOut = () =>{
+      localStorage.clear()
+      history.push("/sign-in")
+      window.location.reload()
+  }
     return (
         <div className = "navbar-main">
         <Grid container paddingTop = "5vh" sx = {{px : "2vw"}} marginBottom = "5vh">
@@ -118,7 +124,7 @@ function TopBar({title}) {
           <IconButton>
             <Logout style = {{fill : "crimson"}}/>
           </IconButton>
-            <Typography pl = {1} onClick = {()=> history.push("/sign-in")}>
+            <Typography pl = {1} onClick = {()=> handleLogOut()}>
                 Logout
             </Typography>
         </MenuItem>
