@@ -16,22 +16,74 @@ import PaidListing from './pages/paid-listing';
 function App() {
   return (
     <Switch>
-      <Route exact path = "/sign-up" component = {SignUp}/>
-      <Route exact path = "/sign-in" component = {SignIn}/>
+      <Route exact path = "/sign-up">
+        {
+          localStorage.getItem('signedIn') ?  <Redirect to = "/sign-in"/> : <SignUp/> 
+        }
+      </Route>
+      <Route exact path = "/sign-in">
+        {
+          localStorage.getItem('signedIn') ? <Redirect to = "/dashboard"/> : <SignIn/> 
+        }
+      </Route>
       <Route exact path = "/">
         <Redirect to = "/dashboard"/>
       </Route>
-      <Route exact path = "/dashboard" component = {MainPage}/>
-      <Route exact path = "/individual" component = {Individual}/>
-      <Route exact path = "/listings" component = {Listings}/>
-      <Route exact path = "/tour-agents" component = {TourAgents}/>
-      <Route exact path = "/tours-completed" component = {ToursCompleted}/>
-      <Route exact path = "/cancelled" component = {Cancelled}/>
-      <Route exact path = "/finance" component = {Finance}/>
-      <Route exact path = "/loan-application" component = {LoanApplication}/>
-      <Route exact path = "/loan-approval" component = {LoanApproval}/>
-      <Route exact path = "/push-notifications" component = {PushNotifications}/>
-      <Route exact path = "/paid-listing" component = {PaidListing}/>
+      <Route exact path = "/dashboard">
+        {
+          localStorage.getItem('signedIn') ? <MainPage/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/individual">
+        {
+          localStorage.getItem('signedIn') ? <Individual/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/listings">
+        {
+          localStorage.getItem('signedIn') ? <Listings/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/tour-agents">
+        {
+          localStorage.getItem('signedIn') ? <TourAgents/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/tours-completed">
+        {
+          localStorage.getItem('signedIn') ? <ToursCompleted/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/cancelled">
+        {
+          localStorage.getItem('signedIn') ? <Cancelled/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/finance">
+        {
+          localStorage.getItem('signedIn') ? <Finance/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/loan-application">
+        {
+          localStorage.getItem('signedIn') ? <LoanApplication/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/loan-approval">
+        {
+          localStorage.getItem('signedIn') ? <LoanApproval/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/push-notifications">
+        {
+          localStorage.getItem('signedIn') ? <PushNotifications/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
+      <Route exact path = "/paid-listing">
+        {
+          localStorage.getItem('signedIn') ? <PaidListing/> : <Redirect to = "/sign-in"/> 
+        }
+      </Route>
     </Switch>
   );
 }

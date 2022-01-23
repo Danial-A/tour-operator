@@ -1,5 +1,6 @@
 // import React from 'react'
 import {Drawer,Box, List, ListItem, ListItemText, ListItemIcon} from '@mui/material'
+import PaidIcon from '@mui/icons-material/Paid';
 import {makeStyles} from '@mui/styles'
 import "../css/dashboard-main.css"
 import { SubjectOutlined } from '@mui/icons-material';
@@ -62,7 +63,7 @@ const menuItems = [
     },
     {
         text : "Paid Listing",
-        icon : <CancelIcon/>,
+        icon : <PaidIcon/>,
         path : "/paid-listing"
     },
     {

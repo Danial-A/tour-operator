@@ -36,7 +36,9 @@ export default function SignIn() {
   const history = useHistory()
 
   const handleSubmit = () =>{
+    localStorage.setItem('signedIn', true)
     history.push('/')
+    window.location.reload()
   }
 
   return (
